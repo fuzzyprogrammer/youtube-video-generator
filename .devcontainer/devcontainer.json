@@ -1,0 +1,42 @@
+{
+  "name": "AI YouTube Video Generator",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "features": {
+    "ghcr.io/devcontainers/features/node:18": {},
+    "ghcr.io/devcontainers/features/python:3.11": {},
+    "ghcr.io/devcontainers/features/git:latest": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-vscode.makefile-tools"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "editor.formatOnSave": true
+      }
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
+  "forwardPorts": [3000, 8000],
+  "portAttributes": {
+    "3000": {
+      "label": "Control Panel",
+      "onAutoForward": "notify"
+    },
+    "8000": {
+      "label": "API Server",
+      "onAutoForward": "notify"
+    }
+  },
+  "remoteUser": "root",
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,readonly"
+  ]
+}
