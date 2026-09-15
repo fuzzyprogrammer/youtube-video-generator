@@ -1,8 +1,7 @@
 {
   "name": "AI YouTube Video Generator",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
   "features": {
-    "ghcr.io/devcontainers/features/node:18": {},
     "ghcr.io/devcontainers/features/python:3.11": {},
     "ghcr.io/devcontainers/features/git:latest": {}
   },
